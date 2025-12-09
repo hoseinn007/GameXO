@@ -1,0 +1,86 @@
+@import url("https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v3.4.0/dist/font-face.css");
+/* Then use font-family: "Sahel", sans-serif; */
+@import "tailwindcss";
+@import "./colors.css";
+@import "./icomoon/style.css";
+@layer base {
+  html {
+    font-family: var(--font-sans), "Sahel", sans-serif;
+    direction: rtl;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-600;
+    font-family: "Sahel", sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+
+  table {
+    @apply w-full border-collapse;
+    direction: rtl;
+  }
+
+  th,
+  td {
+    @apply p-3 text-right border-b border-gray-100;
+  }
+
+  th {
+    @apply bg-gray-50 text-gray-400 font-semibold text-sm uppercase tracking-wide;
+  }
+
+  tr:hover {
+    @apply bg-gray-50;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-400 text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition-colors duration-200 font-medium;
+    font-family: "Sahel", sans-serif;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-gray-600 border border-gray-100 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors duration-200 font-medium;
+    font-family: "Sahel", sans-serif;
+  }
+
+  .price-up {
+    @apply text-green-400 font-semibold;
+  }
+
+  .price-down {
+    @apply text-red-400 font-semibold;
+  }
+
+  .loading-row {
+    @apply animate-pulse;
+  }
+
+  .loading-cell {
+    @apply bg-gray-200 rounded h-4 my-1;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-300 to-green-300 bg-clip-text text-transparent;
+  }
+
+  .rtl {
+    direction: rtl;
+  }
+
+  .ltr {
+    direction: ltr;
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
